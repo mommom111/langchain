@@ -1,7 +1,7 @@
 import os
-os.environ["OPENAI_API_KEY"] = "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"
-os.environ["GOOGLE_CSE_ID"] = "04d25a06f65bd4a60"
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCfkmIF0WvoKa7yKRzcPIeomJ2yaOSOaWY"
+os.environ["OPENAI_API_KEY"] = "" # push前確認！！
+os.environ["GOOGLE_CSE_ID"] = ""
+os.environ["GOOGLE_API_KEY"] = "" # push前確認！！
 
 from langchain.agents import ZeroShotAgent, Tool, AgentExecutor, load_tools
 from langchain import OpenAI, SerpAPIWrapper, LLMChain
@@ -28,4 +28,4 @@ llm_chain = LLMChain(llm=OpenAI(temperature=0), prompt=prompt)
 agent = ZeroShotAgent(llm_chain=llm_chain, tools=tools)
 agent_executor = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools, verbose=True)
 
-agent_executor.run("ぼっち・ざ・ろっくの作者の名前は？")
+agent_executor.run("一ドル何円？")
